@@ -15,6 +15,7 @@ Here is a piece of code that merges two lists into the one. For example if `L1 =
 % @param list L1
 % @param list L2
 % @param list R
+%
 my_append([], L2, L2).
 % 1st
 my_append([H1|T1], L2, [H1|R]) :- my_append(T1, L2, R).
@@ -26,16 +27,16 @@ How does it work?
 ```prolog
 my_append([a, b], [c, d], R)
 % 2nd
-    my_append([a|[b]], [c, d], [a|R]) :- my_append([b], [c, d], R)
-    % 2nd
-        my_append([b|[]], [c, d], [b|R]) :- my_append([], [c, d], R)
-        % 2nd
-            my_append([], [c, d], [c, d])
-            % 1st
-        my_append([b|[]], [c, d], [b|[c, d]])
-        % 2nd
-    my_append([a|[b]], [c, d], [a|[b, c, d]])
-    % 2nd
+my_append([a|[b]], [c, d], [a|R]) :- my_append([b], [c, d], R)
+% ..2nd
+my_append([b|[]], [c, d], [b|R]) :- my_append([], [c, d], R)
+% ....2nd
+my_append([], [c, d], [c, d])
+% ......1st
+my_append([b|[]], [c, d], [b|[c, d]])
+% ....2nd
+my_append([a|[b]], [c, d], [a|[b, c, d]])
+% ..2nd
 my_append([a, b], [c, d], [a, b, c, d])
 % 2nd
 ```
