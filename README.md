@@ -3,8 +3,9 @@ Educational experiments with list structure in Prolog. Not nice nor optimal. Jus
 
 ## Content
 
-- **basic** -- Standalone clauses used in advanced ones in other files.
-- **minmax** -- Searching for minimum and maximum values in lists.
+- [**basic**](https://github.com/vojtechobrusnik/prolog/blob/master/basic.pl) -- Standalone clauses used in advanced ones in other files.
+- [**delete**](https://github.com/vojtechobrusnik/prolog/blob/master/delete.pl) -- Deleting elements from lists.
+- [**minmax**](https://github.com/vojtechobrusnik/prolog/blob/master/minmax.pl) -- Searching for minimum and maximum values in lists.
 
 ## Run
 
