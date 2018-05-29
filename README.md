@@ -6,6 +6,12 @@ Educational experiments with list structure in Prolog. Not nice nor optimal. Jus
 - **basic** -- Standalone clauses used in advanced ones in other files.
 - **minmax** -- Searching for minimum and maximum values in lists.
 
+## Run
+
+Run code in Prolog interpreter with `make run` or just `make`.
+
+Tested on `Ubuntu 17.10 64-bit` and [`SWI-Prolog version 7.4.2 for amd64`](http://www.swi-prolog.org).
+
 ## Recursion
 
 Here is a piece of code that merges two lists into the one. For example if `L1 = [a, b]` and `L2 = [c, d]` then `R` should be equal to `[a, b, c, d]`.
