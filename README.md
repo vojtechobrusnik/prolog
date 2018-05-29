@@ -3,8 +3,8 @@ Educational experiments with list structure in Prolog. Not nice nor optimal. Jus
 
 ## Content
 
-- *basic* -- Standalone clauses used in advanced ones in other files.
-- *minmax* -- Searching for minimum and maximum values in lists.
+- **basic** -- Standalone clauses used in advanced ones in other files.
+- **minmax** -- Searching for minimum and maximum values in lists.
 
 ## Recursion
 
@@ -26,13 +26,13 @@ How does it work?
 
 ```prolog
 my_append([a, b], [c, d], R).
-% 1. call 2nd
+% 1. do 2nd
     my_append([a|[b]], [c, d], [a|R]) :- my_append([b], [c, d], R).
-    % 2. call 2nd
+    % 2. do 2nd
         my_append([b|[]], [c, d], [b|R]) :- my_append([], [c, d], R).
-        % 3. call 2nd
+        % 3. do 2nd
             my_append([], [c, d], [c, d]).
-            % 4. call 1st
+            % 4. do 1st
         my_append([b|[]], [c, d], [b|[c, d]]).
         % 3.
     my_append([a|[b]], [c, d], [a|[b, c, d]]).
