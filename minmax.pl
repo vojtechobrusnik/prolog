@@ -32,7 +32,7 @@ my_min([X|T], MM, M) :-
 my_min_2([], _) :-
 % Empty list..
     false .
-    % ..doesn't have minimum value.
+    % ..doesn't contain minimum value.
 my_min_2([MM|T], M) :-
 % Create seed value for my_min..
     my_min(T, MM, M) .
@@ -73,7 +73,7 @@ my_max([X|T], MM, M) :-
 my_max_2([], _) :-
 % Empty list..
     false .
-    % ..doesn't have maximum value.
+    % ..doesn't contain maximum value.
 my_max_2([MM|T], M) :-
 % Create seed value for my_max..
     my_max(T, MM, M) .

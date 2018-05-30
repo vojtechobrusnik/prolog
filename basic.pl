@@ -89,7 +89,7 @@ my_in_list(E, [_|T]) :-
 my_length([], 0) .
 % Length of an empty list is zero.
 my_length([_|T], N) :-
-% Throw away first element..
+% Throw away the first element..
     my_length(T, NN), N is NN + 1 .
     % ..as long as the rest of the list is not empty. For each thrown element increment the counter.
 
