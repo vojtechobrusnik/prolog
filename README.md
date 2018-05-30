@@ -7,6 +7,7 @@ Educational experiments with list structure in Prolog. Not nice nor optimal. Jus
 - [**delete**](https://github.com/vojtechobrusnik/prolog/blob/master/delete.pl) -- Deleting elements from lists.
 - [**index**](https://github.com/vojtechobrusnik/prolog/blob/master/index.pl) -- Searching for element index in lists.
 - [**minmax**](https://github.com/vojtechobrusnik/prolog/blob/master/minmax.pl) -- Searching for minimum and maximum values in lists.
+- [**queue**](https://github.com/vojtechobrusnik/prolog/blob/master/queue.pl) -- List as a queue.
 - [**stack**](https://github.com/vojtechobrusnik/prolog/blob/master/stack.pl) -- List as a stack.
 - [**total**](https://github.com/vojtechobrusnik/prolog/blob/master/total.pl) -- Calculating totals from list elements.
 

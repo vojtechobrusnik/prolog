@@ -1,6 +1,6 @@
 ##
 
-sources=basic.pl minmax.pl delete.pl index.pl total.pl stack.pl
+sources=basic.pl minmax.pl delete.pl index.pl total.pl stack.pl queue.pl
 
 
 all: run
