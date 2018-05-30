@@ -59,10 +59,8 @@ my_delete_x_first(E, [H|T], [H|R]) :-
 %
 my_delete_last([], []) .
 % Nothing can be deleted from empty list.
-my_delete_last([_|T], []) :-
-% Found last element..
-    my_length(T, N), N = 0 .
-    % ..if the rest of the list is empty.
+my_delete_last([_], []) .
+% Found last element so omit it.
 my_delete_last([H|T], [H|R]) :-
 % Copy other elements to the result list and..
     my_delete_last(T, R) .

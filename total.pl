@@ -18,7 +18,7 @@ my_total([H|T], N) :-
 
 
 %%
-% Total two max
+% Total of two max
 %
 % Calculates total of two maximum elements.
 %
@@ -37,7 +37,7 @@ my_total_two_max(L, N) :-
 
 
 %%
-% Total two min
+% Total of two min
 %
 % Calculates total of two minimum elements.
 %
@@ -56,7 +56,7 @@ my_total_two_min(L, N) :-
 
 
 %%
-% Total last two
+% Total of last two
 %
 % Calculates total of last two elements.
 %
@@ -68,22 +68,20 @@ my_total_two_min(L, N) :-
 %
 my_total_last_two([], 0) .
 % Total of empty list is zero.
-my_total_last_two([H|T], N) :-
-% Found last element..
-    my_length(T, K), K = 0, N is H .
-    % ..if the rest of the list has zero length. Then assign it's value to N.
-my_total_last_two([H|T], N) :-
-% Found last but one..
-    my_length(T, K), K = 1, N1 is H, my_total_last_two(T, N2), N is N1 + N2 .
-    % ..if the rest of the list has length equal to one. Then remember it's value, call my_total_.. to obtain value of the last element and make sum of them.
+my_total_last_two([H], H) .
+% Found only single element.
+my_total_last_two([H1, H2], N) :-
+% Found last two elements..
+    N is H1 + H2 .
+    % ..make sum of them.
 my_total_last_two([_|T], N) :-
 % Skip other elements..
     my_total_last_two(T, N) .
-    % ..for whole list.
+    % ..search the rest of the list.
 
 
 %%
-% Total first two
+% Total of first two
 %
 % Calculates total of first two elements.
 %
@@ -95,11 +93,28 @@ my_total_last_two([_|T], N) :-
 %
 my_total_first_two([], 0) .
 % Total of empty list is zero.
-my_total_first_two([H|T], N) :-
-% Found only one element..
-    my_length(T, K), K = 0, N is H .
-    % ..if the rest of the list has length equal to zero. Value of that element must be sufficient.
+my_total_first_two([H], H) .
+% Found only single element.
 my_total_first_two([H1, H2|_], N) :-
 % Slice first two elements..
     N is H1 + H2 .
     % ..and make sum of them.
+
+
+%%
+% Total of first negative first positive
+%
+% Calculates total of first negative number and first positive number.
+%
+% E.g.:
+%     L = [0, 1, -3, 4, -2] -> N = -2
+%
+% @param list L
+% @param|@return int N
+%
+my_total_neg_pos([], 0) .
+% Total of empty list is zero.
+my_total_neg_pos(L, N) :-
+%
+    my_negative(L, N1), my_positive(L, N2), N is N1 + N2 .
+    % Find negative and positive number and make sum of them.

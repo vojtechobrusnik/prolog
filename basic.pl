@@ -137,3 +137,44 @@ my_smaller(X, Y, N) :-
     X > Y, N is Y .
     % .. return Y.
 
+
+%%
+% Negative
+%
+% Returns the first negative element.
+%
+% E.g.:
+%     L = [0, -1, -2, 3, 1] -> N = -1
+%
+% @param list L
+% @param|@result int N
+%
+my_negative([X|_], N) :-
+% It is the first element..
+    X < 0, N is X .
+    % ..if it is smaller than zero.
+my_negative([_|T], N) :-
+% Throw away other elements..
+    my_negative(T, N) .
+    % ..search the rest of the list.
+
+
+%%
+% Positive
+%
+% Returns the first positive element.
+%
+% E.g.:
+%     L = [0, -1, -2, 3, 1] -> N = 3
+%
+% @param list L
+% @param|@result int N
+%
+my_positive([X|_], N) :-
+% It is the first element..
+    X > 0, N is X .
+    % ..if it is greater than zero.
+my_positive([_|T], N) :-
+% Throw away other elements..
+    my_positive(T, N) .
+    % ..search the rest of the list.
